@@ -1,0 +1,129 @@
+:root {
+    --night: #0f1f2e;
+    --gold: #f4d58d;
+    --cranberry: #d2364c;
+    --snow: #f5f7fa;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    padding: 3rem 1.25rem;
+    background: var(--night);
+    color: var(--snow);
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+    display: grid;
+    justify-items: center;
+    align-content: start;
+}
+
+main {
+    width: min(100%, 32rem);
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: clamp(1.75rem, 6vw, 2.75rem);
+    font-weight: 800;
+    color: var(--gold);
+}
+
+.add-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem
+}
+
+#wish-input:focus {
+    outline: 2px solid var(--gold);
+    border-color: transparent;
+}
+
+#add-btn {
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--cranberry);
+    color: white;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+#add-btn:hover {
+    filter: brightness(1.15);
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(245, 247, 250, 0.15);
+}
+
+.wish-label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    word-break: break-word;
+}
+
+.wish-label input {
+    width: 1.2rem;
+    height: 1.2rem;
+    accent-color: var(--gold);
+}
+
+li.done .wish-text {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.delete-btn:hover {
+    background: var(--cranberry);
+}
+
+#empty-msg {
+    margin-top: 1rem;
+    text-align: center;
+    opacity: 0.7;
+}
+
+[hidden] {
+    display: none;
+}
+
+#wish-input {
+    width: min(90vw, 50rem);
+    max-width: none;
+}
+
+.conrner-photo {
+    pointer-events: none;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 2;
+    width: 96px;
+    height: auto;
+    border-radius: 12px;
+}
+
+@media (max-width: 480px) {
+    .conrner-photo {
+        width: 64px;
+    }
+}
